@@ -1,0 +1,8 @@
+<%= if @customer %>
+	<p>Name:<%=@customer.name%></p>
+	<p>Email:<%=@customer.email%></p>
+	<p>Mobile:<%=@customer.mobile_number %></p>
+<%else%>
+	<p>Record not found</p>
+<% end %>
+<%= link_to "customers list",admin_customers_path%>

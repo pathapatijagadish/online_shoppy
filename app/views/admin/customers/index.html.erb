@@ -1,0 +1,21 @@
+<h1>Customers List</h1>
+<table border="1">
+	<tr>
+		<td>Name:</td>
+		<td>Email:</td>
+		<td>Mobile:</td>
+		<td>Edit:</td>
+		<td>Delete:</td>
+	</tr>
+	<% @customers.each do |u| %>
+	<tr>
+		<td><%= link_to u.name,admin_customer_path(u) %></td>
+		<td><%= u.email %></td>
+		<td><%= u.mobile_number %></td>
+		<td><%= link_to "edit",edit_admin_customer_path(u) %></td>
+		<td><%= link_to "delete",admin_customer_path(u),:method=>:delete %></td>
+	</tr>
+	<%end%>
+</table>
+</br>
+<%= link_to "new customer",new_admin_customer_path %>

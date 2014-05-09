@@ -1,0 +1,4 @@
+<h1>Edit category</h1>
+<%= form_for(@category,:url=>{:controller=>"admin/categories",:action=>:update,:id=>@category.id},:html=>{:method=>:put}) do |f| %>
+<%= render :partial=>"form", :locals=>{:f=>f}%>
+<%end%>

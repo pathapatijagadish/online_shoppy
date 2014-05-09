@@ -1,0 +1,9 @@
+<h1>Seller Details</h1>
+<% if @seller %>
+	<p>Name:<%=@seller.name%></p>
+	<p>Email:<%=@seller.email%></p>
+	<p>Mobile:<%=@seller.mobile_number %></p>
+<%else%>
+	<p>Record not found</p>
+<% end %>
+<%= link_to "sellers list",admin_sellers_path%>

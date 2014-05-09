@@ -1,0 +1,13 @@
+<% if @product.errors.any? %>
+	<h3><%= pluralize(@product.errors.count,"error")%> occured </h3>
+		<ul>
+			<% @product.errors.full_messages.each do |msg| %>
+				<li><%= msg%></li>
+			<%end%>
+		</ul>
+<%end%>
+<p><%= f.label :categories %><%= select_tag :category_id,options_for_select(Category.all.map{|x| [x.title,x.id]}) %></p>
+<p><%=f.label :brands%><%= select_tag :brand_id,options_for_select(Brand.all.map{|x| [x.title,x.id]})%></p>
+<p><%=f.label :title,"Product Name:"%><%=f.text_field :title %></p>
+<p><%=f.label :description,"Description:"%><%=f.text_area :description,:rows=>7 %></p>
+<p><%= f.submit @product.new_record? ? 'create' : 'update'%></p>

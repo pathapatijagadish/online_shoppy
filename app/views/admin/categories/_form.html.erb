@@ -1,0 +1,10 @@
+<% if @category.errors.any? %>
+	<h3><%= pluralize(@category.errors.count,"error")%> occured </h3>
+		<ul>
+			<% @category.errors.full_messages.each do |msg| %>
+				<li><%= msg%></li>
+			<%end%>
+		</ul>
+<%end%>
+<p><%=f.label :title%><%=f.text_field :title %></p>
+<p><%= f.submit @category.new_record? ? 'create' : 'update'%></p>

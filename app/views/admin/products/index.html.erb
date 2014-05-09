@@ -1,0 +1,17 @@
+<h1>Product List</h1>
+<table>
+	<tr>
+		<td>Product Title</td>
+	</tr>
+	<% @products.each do |c| %>
+	<tr>
+		<td><%= c.title%></td>
+		<td><%= link_to "Edit",edit_admin_product_path(c)%></td>
+		<td><%= link_to "delete",admin_product_path(c),:method=>:delete%></td>
+	</tr>
+	<%end%>
+</table>
+</br>
+<%= link_to "Add Product",new_admin_product_path%>
+
+

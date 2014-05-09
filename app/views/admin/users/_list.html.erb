@@ -1,0 +1,19 @@
+<% params[:sort] = params[:sort]=="ASC" ? "DESC" : "ASC" %>
+<table>
+	<tr>
+		<td><%= link_to "Name",admin_users_path(:sort=>params[:sort],:field=>"name"),:remote=>true %></td>
+		<td><%= link_to "Email",admin_users_path(:sort=>params[:sort],:field=>"email"),:remote=>true %></td>
+		<td><%= link_to "Mobile",admin_users_path(:sort=>params[:sort],:field=>"mobile_number"),:remote=>true %></td>
+		<td>Edit:</td>
+		<td>Delete:</td>
+	</tr>
+	<% @users.each do |u| %>
+	<tr>
+		<td><%= link_to u.name,admin_user_path(u) %></td>
+		<td><%= u.email %></td>
+		<td><%= u.mobile_number %></td>
+		<td><%= link_to "edit",edit_admin_user_path(u) %></td>
+		<td><%= link_to "delete",admin_user_path(u),:method=>:delete %></td>
+	</tr>
+	<%end%>
+</table>

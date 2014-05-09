@@ -1,0 +1,17 @@
+<h1>Categories List</h1>
+<table>
+	<tr>
+		<td>Category Title</td>
+	</tr>
+	<% @categories.each do |c| %>
+	<tr>
+		<td><%= c.title%></td>
+		<td><%= link_to "Edit",edit_admin_category_path(c)%></td>
+		<td><%= link_to "delete",admin_category_path(c),:method=>:delete%></td>
+	</tr>
+	<%end%>
+</table>
+</br>
+<%= link_to "Add Category",new_admin_category_path%>
+
+

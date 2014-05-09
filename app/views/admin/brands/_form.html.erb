@@ -1,0 +1,11 @@
+<% if @brand.errors.any? %>
+	<h3><%= pluralize(@brand.errors.count,"error")%> occured </h3>
+		<ul>
+			<% @brand.errors.full_messages.each do |msg| %>
+				<li><%= msg%></li>
+			<%end%>
+		</ul>
+<%end%>
+<p><%=f.label :title%><%=f.text_field :title %></p>
+<p><%= f.submit @brand.new_record? ? 'create' : 'update'%></p>
+

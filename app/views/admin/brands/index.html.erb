@@ -1,0 +1,19 @@
+<h1>Brands list</h1>
+<table>
+	<tr>
+		<td>Title</td>
+		<td>Description</td>
+		<td>Edit</td>
+		<td>Delete</td>
+	</tr>
+	<% @brands.each do |f| %>
+	<tr>
+		<td><%= link_to f.title,admin_brand_path(f) %></td>
+		<td><%= f.description%></td>
+		<td><%= link_to "edit",edit_admin_brand_path(f)%></td>
+		<td><%= link_to "Delete",admin_brand_path(f),:confirm=>"Are u sure",:method=>:delete%></td>
+	</tr>
+	<% end %>
+</table>
+</br
+<%= link_to "New Brand",new_admin_brand_path%>

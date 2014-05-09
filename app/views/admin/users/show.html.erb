@@ -1,0 +1,9 @@
+<h2>User Details</h2>
+<% if @user %>
+	<p>Name:<%=@user.name%></p>
+	<p>Email:<%=@user.email%></p>
+	<p>Mobile:<%=@user.mobile_number %></p>
+<%else%>
+	<p>Record not found</p>
+<% end %>
+<%= link_to "users list",admin_users_path%>

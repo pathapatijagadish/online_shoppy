@@ -1,0 +1,22 @@
+<h1>Sellers List</h1>
+<table border="1">
+	<tr>
+		<td>Name:</td>
+		<td>Email:</td>
+		<td>Mobile:</td>
+		<td>Edit:</td>
+		<td>Delete:</td>
+	</tr>
+	<% @sellers.each do |u| %>
+	<tr>
+		<td><%= link_to u.name,admin_seller_path(u) %></td>
+		<td><%= u.email %></td>
+		<td><%= u.mobile_number %></td>
+		<td><%= link_to "edit",edit_admin_seller_path(u) %></td>
+		<td><%= link_to "delete",admin_seller_path(u),:method=>:delete %></td>
+	</tr>
+	<%end%>
+</table>
+
+</br>
+<%= link_to "new seller",new_admin_seller_path %>

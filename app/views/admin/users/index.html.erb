@@ -1,0 +1,7 @@
+<h1>Adminn Users List</h1>
+<%#= link_to "Load Users" ,admin_users_path,:remote=>true%>
+<div id="admin_users">
+	<%= render :partial=>'list' %>
+</div>
+</br>
+<%= link_to "new Admin",new_admin_user_path %>

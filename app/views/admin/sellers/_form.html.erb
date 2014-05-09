@@ -1,0 +1,15 @@
+<% if @seller.errors.any? %>
+	<h3><%= pluralize(@seller.errors.count,"error")%> occured </h3>
+		<ul>
+			<% @seller.errors.full_messages.each do |msg| %>
+				<li><%= msg%></li>
+			<%end%>
+		</ul>
+<%end%>
+<p><%=f.label :name%><%=f.text_field :name %></p>
+<p><%=f.label :email%><%=f.email_field :email %></p>
+<p><%=f.label :password%><%=f.password_field :password %></p>
+<p><%=f.label :password_confirmation%><%=f.password_field :password_confirmation %></p>
+<p><%=f.label :mobile_number%><%=f.text_field :mobile_number %></p>
+<p><%= f.submit @seller.new_record? ? 'create' : 'update'%></p>
+
